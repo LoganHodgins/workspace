@@ -42,7 +42,6 @@ app.post("/api/auth", (request, response) => {
   const findUser = mockUsers.find((user) => user.username === username);
   if (!findUser || findUser.password !== password)
     return response.status(401).send({ msg: "BAD CREDENTIALS" });
-
   request.session.user = findUser;
   return response.status(200).send(findUser);
 });
