@@ -56,10 +56,8 @@ router.post(
   (request, response) => {
     const result = validationResult(request);
     console.log(result);
-
     if (!result.isEmpty())
       return response.status(400).send({ errors: result.array() });
-
     const data = matchedData(request);
     const newUser = { id: mockUsers[mockUsers.length - 1].id + 1, ...data };
     console.log(newUser);
