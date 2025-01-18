@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cookieParser("helloworld"));
 app.use(
   session({
-    secret: "test",
+    secret: "secret",
     saveUninitialized: false,
     resave: false,
     cookie: {
